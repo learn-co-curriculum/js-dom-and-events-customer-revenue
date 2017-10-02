@@ -10,19 +10,20 @@ function preventRefreshOnSubmit(){
 preventRefreshOnSubmit()
 
 function addNewTrOnClick(){
+
+
+  let submit = document.querySelector('input[type="submit"]'  )
   let customerTable = document.querySelector('table')
-  let submit = document.querySelector('input[type="submit"]')
   let customerNameInput = document.querySelector('input[name="name"]')
   let customerRevenueInput = document.querySelector('input[name="revenue"]')
-
-
 
   submit.addEventListener('click', function(event){
     let name = customerNameInput.value
     let revenue = customerRevenueInput.value
+    
     let tbody = document.querySelector('tbody')
     tbody.insertAdjacentHTML('beforeend', `<tr><td>${name}</td> <td>${revenue}</td><td><button>X</button></td></tr>`)
-    
+
     customerNameInput.value = ''
     customerRevenueInput.value = ''
   })
@@ -74,7 +75,7 @@ function customers(){
 
 function findByName(name){
   return customers().filter(function(customer){
-    return customer.name == name
+    return customer.name.toLowerCase() == name.toLowerCase()
   })
 }
 

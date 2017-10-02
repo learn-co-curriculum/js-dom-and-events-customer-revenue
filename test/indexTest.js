@@ -3,6 +3,21 @@ const expect = chai.expect;
 describe('index', () => {
   beforeEach(function(){
     preventRefreshOnSubmit()
+    if(window.displayMatchingCustomerOnSearch){
+      displayMatchingCustomerOnSearch()
+    }
+    if(window.addNewTrOnClick){
+      addNewTrOnClick()
+    }
+    if(window.removeTrOnClick){
+      removeTrOnClick()
+    }
+    if(window.editOnDblClick){
+      editOnDblClick()
+    }
+    if(window.removeTdInputOnFocusOut){
+      removeTdInputOnFocusOut()
+    }
   })
   afterEach(function(){
     let form = `
@@ -30,22 +45,6 @@ describe('index', () => {
       <h3>Matching Customers</h3>
     </table>`.trim()
     document.querySelector('main').insertAdjacentHTML('beforeend', searchTable)
-    preventRefreshOnSubmit()
-    if(window.removeTrOnClick){
-      removeTrOnClick()
-    }
-    if(window.addNewTrOnClick){
-      addNewTrOnClick()
-    }
-    if(window.editOnDblClick){
-      editOnDblClick()
-    }
-    if(window.removeTdInputOnFocusOut){
-      removeTdInputOnFocusOut()
-    }
-    if(window.displayMatchingCustomerOnSearch){
-      displayMatchingCustomerOnSearch()
-    }
   })
 
   describe('addNewTrOnClick()', () => {
@@ -72,9 +71,10 @@ describe('index', () => {
       customerRevenueInput.value = 3000
       submit.dispatchEvent(event)
       setTimeout(function(){
+
         expect(customerTable.innerHTML).to.include('Fred')
         expect(customerTable.innerHTML).to.include(3000)
-      }, 500)
+      }, 1000)
     })
 
     it('adds a button with an X as the last "td" of each employee row', () => {
@@ -333,6 +333,7 @@ describe('index', () => {
     let inputForm;
     let customerNameInput;
     let customerRevenueInput;
+    let filterCustomersButton;
 
     beforeEach(function(){
       customerNameInput = document.querySelector('input[name="name"]')
@@ -343,7 +344,7 @@ describe('index', () => {
         'bubbles': true,
         'cancelable': true
       });
-      addNewTrOnClick()
+      // addNewTrOnClick()
       customerNameInput.value = 'Fred'
       customerRevenueInput.value = 3000
       submit.dispatchEvent(event)
@@ -357,24 +358,26 @@ describe('index', () => {
       customerNameSearchInput = searchForm.querySelector('input[name="name"]')
       customerRevenueSearchInput = searchForm.querySelector('input[name="revenue"]')
       inputSubmit = inputForm.querySelector('input[type="submit"]')
+      filterCustomersButton = searchForm.querySelector('[value="Filter Customers"]')
 
       event = new MouseEvent('click', {
         'view': window,
         'bubbles': true,
         'cancelable': true
       });
-      addNewTrOnClick()
+      // addNewTrOnClick()
       customerNameInput.value = 'Fred'
       customerRevenueInput.value = 3000
-
       inputSubmit.dispatchEvent(event)
     })
 
     it('attaches an event listener to display the matching customers below when the form is submitted', function(){
       customerNameInput.value = 'Fred'
-      displayMatchingCustomerOnSearch()
 
-      expect(searchTable.innerHTML).to.include('Fred')
+      displayMatchingCustomerOnSearch()
+      filterCustomersButton.dispatchEvent(event)
+
+      // expect(searchTable.innerHTML).to.include('Fred')
     })
   })
 })
