@@ -22,6 +22,7 @@ function addNewTrOnClick(){
     let revenue = customerRevenueInput.value
     let tbody = document.querySelector('tbody')
     tbody.insertAdjacentHTML('beforeend', `<tr><td>${name}</td> <td>${revenue}</td><td><button>X</button></td></tr>`)
+    
     customerNameInput.value = ''
     customerRevenueInput.value = ''
   })
@@ -93,9 +94,3 @@ function displayMatchingCustomerOnSearch(){
     searchTable.insertAdjacentHTML('beforeend', trs)
   })
 }
-
-removeTrOnClick()
-addNewTrOnClick()
-editOnDblClick()
-removeTdInputOnFocusOut()
-displayMatchingCustomerOnSearch()
