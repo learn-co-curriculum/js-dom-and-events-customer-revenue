@@ -7,11 +7,7 @@ function preventRefreshOnSubmit(){
     })
 }
 
-preventRefreshOnSubmit()
-
 function addNewTrOnClick(){
-
-
   let submit = document.querySelector('input[type="submit"]'  )
   let customerTable = document.querySelector('table')
   let customerNameInput = document.querySelector('input[name="name"]')
@@ -20,7 +16,6 @@ function addNewTrOnClick(){
   submit.addEventListener('click', function(event){
     let name = customerNameInput.value
     let revenue = customerRevenueInput.value
-    
     let tbody = document.querySelector('tbody')
     tbody.insertAdjacentHTML('beforeend', `<tr><td>${name}</td> <td>${revenue}</td><td><button>X</button></td></tr>`)
 
