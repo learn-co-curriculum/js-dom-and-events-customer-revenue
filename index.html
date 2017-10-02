@@ -12,17 +12,38 @@
 
   <body>
     <main>
-        <h1> Admin Page of Scuber </h1>
-        <form class="" action="/employees" method="post" >
-          <label for=""> Employee Name</label>
-          <input type="text" name="name" value="" />
-          <input type="submit" name="" value="Add Employee" />
-        </form>
-        <ul class="employee-list">
+    <h1> Admin Page of Scuber </h1>
+    <form class="" action="/customers" method="post" >
+      <label for=""> Customer Name</label>
+      <input type="text" name="name" value="" />
+      <label for=""> Customer Revenue</label>
+      <input type="text" name="revenue" value="" />
+      <input type="submit" name="" value="Add customer" />
+    </form>
 
-        </ul>
-        <a href="#">Clear Employee List</a>
-    </main>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Revenue</th>
+      </tr>
+      <tr>
+        <td>Bobby</td>
+        <td>4000</td>
+        <td> <button>X</button> </td>
+      </tr>
+    </table>
+
+    <form action="/customers" method="post">
+      <label for="">Name Filter</label>
+      <input type="text" name="name" value="" />
+      <label for="">Revenue Filter </label>
+      <input type="text" name="revenue" value="" />
+      <input type="submit" name="" value="Filter Customers" />
+    </form>
+    <table>
+      <h3>Matching Customers</h3>
+    </table>
+</main>
     <!-- <div> for Mocha to display test results. -->
     <div id="mocha"></div>
 
@@ -46,6 +67,7 @@
 
     <!-- Include Flatiron School's test runner to push results to Learn. -->
     <script src="node_modules/learn-browser/learnBrowser.min.js"></script>
+
 
     <!-- Run the test suite automatically when the page loads. -->
 

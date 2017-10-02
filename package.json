@@ -1,7 +1,7 @@
 {
-  "name": "js-dom-and-events-acting-on-events",
+  "name": "js-dom-and-events-customer-revenue",
   "version": "0.1.0",
-  "description": "JavaScript DOM and Events Acting On Events Learn.co",
+  "description": "JavaScript DOM and Events Customer Revenue Events Learn.co",
   "main": "index.js",
   "scripts": {
     "postinstall": "gem install learn-co",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/learn-co-curriculum/js-dom-and-events-acting-on-events.git"
+    "url": "git+ssh://git@github.com/learn-co-curriculum/js-dom-and-events-customer-revenue.git"
   },
   "keywords": [
     "learn",
@@ -22,9 +22,9 @@
   "author": "Flatiron School",
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
-    "url": "https://github.com/learn-co-curriculum/js-dom-and-events-acting-on-events/issues"
+    "url": "https://github.com/learn-co-curriculum/js-dom-and-events-customer-revenue/issues"
   },
-  "homepage": "https://github.com/learn-co-curriculum/js-dom-and-events-acting-on-events#readme",
+  "homepage": "https://github.com/learn-co-curriculum/js-dom-and-events-customer-revenue#readme",
   "devDependencies": {
     "learn-browser": "^0.1.13"
   }
