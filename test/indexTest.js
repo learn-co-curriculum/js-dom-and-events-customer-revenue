@@ -381,3 +381,28 @@ describe('index', () => {
     })
   })
 })
+
+describe('setup code', function(){
+  afterEach(function(){
+    preventRefreshOnSubmit()
+    if(window.displayMatchingCustomerOnSearch){
+      displayMatchingCustomerOnSearch()
+    }
+    if(window.addNewTrOnClick){
+      addNewTrOnClick()
+    }
+    if(window.removeTrOnClick){
+      removeTrOnClick()
+    }
+    if(window.editOnDblClick){
+      editOnDblClick()
+    }
+    if(window.removeTdInputOnFocusOut){
+      removeTdInputOnFocusOut()
+    }
+  })
+
+  it('adds the listeners', function(){
+
+  })
+})
